@@ -1,8 +1,18 @@
 import React from 'react';
-import {List, Edit, Create, Datagrid, TextField, EditButton, DisabledInput, LongTextInput, EmailField, ReferenceField,ReferenceInput, SelectInput, SimpleInput, SimpleForm, TextInput } from 'react-admin';
+import {List, Edit, Create, Datagrid, TextField, EditButton, DisabledInput, LongTextInput, EmailField, ReferenceField,ReferenceInput, SelectInput, SimpleInput, SimpleForm, TextInput,Filter } from 'react-admin';
+
+
+const PostFilter = (props) => (
+  <Filter {...props}>
+    <TextInput label="Search" source="q" alwaysOn />
+    <ReferenceInput label="User" source="userId" reference="users" allowEmpety>
+      <SelectInput optionText="name" />
+    </ReferenceInput>}
+  </Filter>
+);
 
 export const PostList = (props) => (
-  <List {...props} >
+  <List {...props} filters={<PostFilter />}>
     <Datagrid>
       <TextField source="id" />
       <ReferenceField label="User" source="userId" reference="users">
