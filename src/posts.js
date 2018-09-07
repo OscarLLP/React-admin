@@ -1,5 +1,5 @@
 import React from 'react';
-import {List, Edit, Create, Datagrid, TextField, EditButton, DisabledInput, LongTextInput, EmailField, ReferenceField,ReferenceInput, SelectInput, SimpleInput, SimpleForm, TextInput,Filter } from 'react-admin';
+import {List, Edit, Create, Datagrid, ReferenceField, TextField, EditButton, DisabledInput, LongTextInput, ReferenceInput, SelectInput, SimpleForm, TextInput,Filter } from 'react-admin';
 
 
 const PostFilter = (props) => (
@@ -7,7 +7,7 @@ const PostFilter = (props) => (
     <TextInput label="Search" source="q" alwaysOn />
     <ReferenceInput label="User" source="userId" reference="users" allowEmpety>
       <SelectInput optionText="name" />
-    </ReferenceInput>}
+    </ReferenceInput>
   </Filter>
 );
 
